@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    u = User.new(uid: params[:user][:uid], password: params[:user][:password])
-    u.save
+    @user = User.new(uid: params[:user][:uid], password: params[:user][:password])
+    @user.save
     redirect_to users_path
   end
   
